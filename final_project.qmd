@@ -1,10 +1,6 @@
----
+------------------------------------------------------------------------
 
-title: "final_project.qmd"
-author: "Victor Okpanachi"
-format: html
-editor: visual
----
+title: "final_project.qmd" author: "Victor Okpanachi" format: html editor: visual ---
 
 ## Quarto
 
@@ -15,7 +11,6 @@ Quarto enables you to weave together content and executable code into a finished
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
-# Introduction
 # This data is a microbial water quality data collected in Dar es Salaam, Tanzania. It was collected last summer and the aim was to assess the level of microbial water quality from different water sources in three districts of Dar es Salaam by tessting for the presence of coliforms and E.coli which serves as an indicator for fecal contamination in water sources. 
 ```
 
@@ -285,7 +280,7 @@ ggsave(
 
 ```
 
-```{}
+```         
 ```
 
 ```{r}
@@ -356,5 +351,5 @@ coliform_risk_with_who
 
 ```
 
-```{}
+```         
 ```
