@@ -1,0 +1,360 @@
+---
+
+title: "final_project.qmd"
+author: "Victor Okpanachi"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+# Introduction
+# This data is a microbial water quality data collected in Dar es Salaam, Tanzania. It was collected last summer and the aim was to assess the level of microbial water quality from different water sources in three districts of Dar es Salaam by tessting for the presence of coliforms and E.coli which serves as an indicator for fecal contamination in water sources. 
+```
+
+You can add options to executable code like this
+
+```{r}
+# My data-loading step demonstrates key skills from Week 2 (data import and vectors) and Week 3 (tidyverse basics). I use read_csv() to import the raw water-quality dataset into R and load the necessary tidyverse packages to prepare for further cleaning and analysis.
+
+library(tidyverse)
+library(dplyr)
+library(readr)
+
+water_raw <- read_csv("data_raw/water_tz_full.csv")
+View(water_raw)
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+
+# This data-cleaning step demonstrates key skills from Week 3 (tidyverse basics), Week 6 (tidy data), and Week 7 (solving bigger problems). I use filter(), mutate(), and piping to create log-transformed microbial variables..
+
+water_clean <- water_raw |>
+  filter(!is.na(coliform_mpn_100mL)) |>   
+  mutate(
+    log_coliform = log10(coliform_mpn_100mL + 1),
+    log_ecoli    = log10(e_coli_mpn_100mL + 1)
+  )
+
+glimpse(water_clean)
+
+
+
+```
+
+```{r}
+#In the summary statistics, key concepts are from Week 3 (tidyverse basics), Week 4 (grouping data), and Week 7 (solving bigger problems). I use group_by() and summary() within a tidyverse pipeline to calculate mean coliform and E. coli concentrations across districts and water sources.
+
+summary_microbes <- water_clean |>
+  group_by(districts, water_source) |>
+  summarise(
+    mean_coliform = mean(coliform_mpn_100mL, na.rm = TRUE),
+    mean_ecoli    = mean(e_coli_mpn_100mL, na.rm = TRUE),
+    n = n()
+  )
+
+summary_microbes
+
+```
+
+```{r}
+# I used boxplots to visualize microbial contamination patterns across districts and water sources, using concepts from Week 5 (data visualization), Week 3 (tidyverse basics), and Week 6 (tidy data principles). I used ggplot(), geom_boxplot(), log-scaled axes, and customized labels/themes to create clear visual summaries of coliform and E. coli contamination across districts and water sources.
+
+
+#This project demonstrates key skills from Week 8 (reproducible workflows and project structure) by using an RStudio Project with subdirectories such as data_raw, data_clean, and outputs. I read data and save results using relative file paths (e.g., "data_raw/water_tz_full.csv" and "outputs/..."), and I scripted all data cleaning, analysis, and visualization in a Quarto document.
+
+
+# coliform by water source
+
+ggplot(water_clean, aes(x = water_source, y = coliform_mpn_100mL)) +
+  geom_boxplot(fill = "steelblue") +
+  scale_y_log10() +
+  labs(
+    title = "Coliform Contamination by Water Source",
+    x = "Water Source",
+    y = "Coliform MPN/100 mL (log scale)"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave(
+  "outputs/coliform_by_water_source.png",
+  width = 8, height = 5, dpi = 300
+)
+
+
+# coliform by Districts
+ggplot(water_clean, aes(x = districts, y = coliform_mpn_100mL)) +
+  geom_boxplot(fill = "skyblue") +
+  scale_y_log10() +
+  labs(title = "Coliform Contamination by District",
+       y = "Coliform MPN/100 mL (log scale)",
+       x = "District")
+ggsave(
+  "outputs/coliform_by_district.png",
+  width = 8, height = 5, dpi = 300
+)
+
+
+# E.coli by water source
+ggplot(water_clean, aes(x = water_source, y = e_coli_mpn_100mL)) +
+  geom_boxplot(fill = "tomato") +
+  scale_y_log10() +
+  labs(title = "E. coli Levels by Water Source",
+       y = "E. coli MPN/100 mL (log scale)",
+       x = "Water Source") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave(
+  "outputs/ecoli_by_water_source.png",
+  width = 8, height = 5, dpi = 300
+)
+
+# E.coli by Districts
+ggplot(water_clean, aes(x = districts, y = e_coli_mpn_100mL)) +
+  geom_boxplot(fill = "orange") +
+  scale_y_log10() +
+  labs(
+    title = "E. coli Contamination by District",
+    x = "District",
+    y = "E. coli MPN/100 mL (log scale)"
+  )
+
+ggsave(
+  "outputs/ecoli_by_district.png",
+  width = 8, height = 5, dpi = 300
+)
+
+```
+
+```{r}
+# This geospatial visualization is a concept from Week 9 (geospatial data), Week 5 (data visualization), and Week 3 (tidyverse basics). I created the spatial plots using longitude and latitude to map contamination intensity and apply faceting to compare E. coli and coliform levels across districts. 
+
+water_clean <- water_clean |>
+  mutate(
+    log_ecoli = log10(e_coli_mpn_100mL + 1),
+    log_coliform = log10(coliform_mpn_100mL + 1)
+  )
+
+
+p_ecoli_facet <- ggplot(water_clean,
+                        aes(x = longitude, y = latitude, color = log_ecoli)) +
+  geom_point(size = 3, alpha = 0.9) +
+  scale_color_viridis_c(option = "magma") +
+  coord_equal() +
+  facet_wrap(~ districts) +
+  labs(
+    title = "E. coli Contamination Across Districts",
+    x = "Longitude",
+    y = "Latitude",
+    color = "log10(E. coli)"
+  ) +
+  theme_minimal()
+
+p_ecoli_facet
+
+ggsave(
+  "outputs/ecoli_geospatial_facet_districts.png",
+  plot = p_ecoli_facet,
+  width = 8, height = 5, dpi = 300
+)
+
+
+
+p_coliform_facet <- ggplot(water_clean,
+                           aes(x = longitude, y = latitude, color = log_coliform)) +
+  geom_point(size = 3, alpha = 0.9) +
+  scale_color_viridis_c(option = "plasma") +
+  coord_equal() +
+  facet_wrap(~ districts) +
+  labs(
+    title = "Total Coliform Contamination Across Districts",
+    x = "Longitude",
+    y = "Latitude",
+    color = "log10(Coliform MPN/100 mL)"
+  ) +
+  theme_minimal()
+
+p_coliform_facet
+
+ggsave(
+  "outputs/coliform_geospatial_facet_districts.png",
+  plot = p_coliform_facet,
+  width = 8, height = 5, dpi = 300
+)
+
+
+```
+
+```{r}
+# Here, I created a function using skills from Week 11 (functions), Week 3 (tidyverse basics), and Week 5 (data visualization). I write reusable functions to classify E. coli and coliform contamination according to WHO guidelines and apply them across the dataset using tidyverse mutation. I then summarize microbial risk levels by district and visualize the results using proportion bar charts.
+
+classify_ecoli_risk <- function(ecoli_value) {
+  if (ecoli_value == 0) {
+    "Safe"
+  } else if (ecoli_value <= 10) {
+    "Low Risk"
+  } else if (ecoli_value <= 100) {
+    "Intermediate Risk"
+  } else {
+    "High Risk"
+  }
+}
+
+classify_coliform_risk <- function(coliform_value) {
+  if (coliform_value == 0) {
+    "Safe"
+  } else if (coliform_value <= 10) {
+    "Low Risk"
+  } else if (coliform_value <= 100) {
+    "Intermediate Risk"
+  } else {
+    "High Risk"
+  }
+}
+
+# Applying the function
+water_clean <- water_raw |>
+  mutate(
+    ecoli_risk_level    = sapply(e_coli_mpn_100mL, classify_ecoli_risk),
+    coliform_risk_level = sapply(coliform_mpn_100mL, classify_coliform_risk)
+  )
+
+# Summary table of E. coli risk levels by district
+
+risk_by_district <- water_clean |>
+  group_by(districts, ecoli_risk_level) |>
+  summarise(n = n(), .groups = "drop") |>
+  tidyr::pivot_wider(
+    names_from = ecoli_risk_level,
+    values_from = n,
+    values_fill = 0
+  )
+
+risk_by_district   
+
+# Bar plot ofColiform risk levels by district 
+
+p_coliform_risk <- ggplot(water_clean, aes(x = districts, fill = coliform_risk_level)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  labs(
+    title = "Coliform Risk Levels Across Districts",
+    x = "District",
+    y = "Percentage of Samples",
+    fill = "Coliform Risk Level"
+  ) +
+  theme_minimal()
+
+p_coliform_risk
+
+ggsave(
+  "outputs/coliform_risk_by_district.png",
+  plot = p_coliform_risk,
+  width = 8, height = 5, dpi = 300
+)
+
+# Bar plot of E.coli risk levels by district 
+
+p_ecoli_risk <- ggplot(water_clean, aes(x = districts, fill = ecoli_risk_level)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  labs(
+    title = "E. coli Risk Levels Across Districts",
+    x = "District",
+    y = "Percentage of Samples",
+    fill = "E. coli Risk Level"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+p_ecoli_risk
+
+ggsave(
+  "outputs/ecoli_risk_by_district.png",
+  plot = p_ecoli_risk,
+  width = 8, height = 5, dpi = 300
+)
+
+```
+
+```{}
+```
+
+```{r}
+#I use a for loop Week 13 (iteration and loops) to iterate over districts, calculate mean coliform and E. coli concentrations, and store the results in a structured data frame.
+
+districts <- unique(water_clean$districts)
+loop_results <- data.frame(district = character(), mean_coliform = numeric())
+
+for (d in districts) {
+  mean_val <- mean(water_clean$coliform_mpn_100mL[water_clean$districts == d])
+  loop_results <- rbind(loop_results, data.frame(district = d, mean_coliform  = mean_val))
+}
+
+loop_results
+
+ # Mean E. coli for each district using a loop.
+districts <- unique(water_clean$districts)
+loop_results <- data.frame(district = character(), mean_ecoli = numeric())
+
+for (d in districts) {
+  mean_val <- mean(water_clean$e_coli_mpn_100mL[water_clean$districts == d])
+  loop_results <- rbind(loop_results, data.frame(district = d, mean_ecoli = mean_val))
+}
+
+loop_results
+```
+
+```{r}
+
+# A lookup table with WHO microbiological risk categories and recommended actions for each risk level. I then joined this table to the E. coli and coliform risk summaries using a left join on the categorical risk level. (Week 4)
+
+
+who_risk_info <- tribble(
+  ~risk_level,          ~who_category,                ~action_recommendation,
+  "Safe",               "Meets WHO guideline",        "No immediate action required",
+  "Low Risk",           "Low microbiological risk",   "Encourage safe storage and hygiene",
+  "Intermediate Risk",  "Moderate microbiological risk", "Investigate source and consider treatment",
+  "High Risk",          "High microbiological risk",  "Urgent: treat water or use alternative source"
+)
+
+
+ecoli_by_district <- water_clean |>
+  count(districts, ecoli_risk_level, name = "n") |>
+  group_by(districts) |>
+  mutate(pct = n / sum(n)) |>
+  ungroup()
+
+ecoli_risk_with_who <- ecoli_by_district |>
+  rename(risk_level = ecoli_risk_level) |>
+  left_join(who_risk_info, by = "risk_level")
+
+ecoli_risk_with_who
+
+
+
+
+coliform_by_district <- water_clean |>
+  count(districts, coliform_risk_level, name = "n") |>
+  group_by(districts) |>
+  mutate(pct = n / sum(n)) |>
+  ungroup()
+
+coliform_risk_with_who <- coliform_by_district |>
+  rename(risk_level = coliform_risk_level) |>
+  left_join(who_risk_info, by = "risk_level")
+
+coliform_risk_with_who
+
+```
+
+```{}
+```
