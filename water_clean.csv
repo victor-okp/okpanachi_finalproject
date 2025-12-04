@@ -1,0 +1,161 @@
+Sample,districts,collection_location,water_source,latitude,longitude,tubes_positive_coliforms,tubes_positive_e.coli,coliform_mpn_100mL,e_coli_mpn_100mL,ecoli_risk_level,coliform_risk_level
+1,Ilala,Buguruni,Borehole,-6.836183,39.24378,4,0,16,2.2,Low Risk,Intermediate Risk
+2,Ilala,Buguruni,Borehole,-6.835814,39.243639,1,1,16,2.2,Low Risk,Intermediate Risk
+3,Ilala,Buguruni,Borehole,-6.835395,39.243481,0,0,2.2,2.2,Low Risk,Low Risk
+4,Ilala,Buguruni,Borehole,-6.83511,39.243269,3,1,9.2,2.2,Low Risk,Low Risk
+5,Ilala,Buguruni,Public Tap,-6.83511,39.24334,0,0,2.2,2.2,Low Risk,Low Risk
+6,Ilala,Buguruni,Public Tap,-6.834228,39.242962,0,0,2.2,2.2,Low Risk,Low Risk
+7,Ilala,Buguruni,Borehole,-6.834247,39.243667,5,0,16,2.2,Low Risk,Intermediate Risk
+8,Ilala,Buguruni,Borehole,-6.833775,39.244147,5,0,16,2.2,Low Risk,Intermediate Risk
+9,Ilala,Buguruni,Public Tap,-6.833664,39.244712,0,0,2.2,2.2,Low Risk,Low Risk
+10,Ilala,Buguruni,Borehole,-6.834182,39.242925,0,0,2.2,2.2,Low Risk,Low Risk
+11,Ilala,Vingunguti,Borehole,-6.843816,39.230893,0,0,2.2,2.2,Low Risk,Low Risk
+12,Ilala,Vingunguti,Vendor,-6.843816,39.230893,1,0,2.2,2.2,Low Risk,Low Risk
+13,Ilala,Vingunguti,Borehole,-6.844423,39.232144,0,0,2.2,2.2,Low Risk,Low Risk
+14,Ilala,Vingunguti,Borehole,-6.844808,39.231914,0,0,2.2,2.2,Low Risk,Low Risk
+15,Ilala,Vingunguti,Borehole,-6.844808,39.231914,0,0,2.2,2.2,Low Risk,Low Risk
+16,Ilala,Vingunguti,Borehole,-6.844686,39.230143,2,0,5.1,2.2,Low Risk,Low Risk
+17,Ilala,Vingunguti,Borehole,-6.844686,39.230162,0,0,2.2,2.2,Low Risk,Low Risk
+18,Ilala,Vingunguti,Borehole,-6.842749,39.228255,0,0,2.2,2.2,Low Risk,Low Risk
+19,Ilala,Vingunguti,Borehole,-6.843075,39.227878,0,0,2.2,2.2,Low Risk,Low Risk
+20,Ilala,Vingunguti,Borehole,-6.846491,39.228295,1,0,2.2,2.2,Low Risk,Low Risk
+21,Ilala,Kipawa,Borehole,-6.852718,39.212133,0,0,2.2,2.2,Low Risk,Low Risk
+22,Ilala,Kipawa,Borehole,-6.848418,39.211502,1,0,2.2,2.2,Low Risk,Low Risk
+23,Ilala,Kipawa,Borehole,-6.848263,39.211651,0,0,2.2,2.2,Low Risk,Low Risk
+24,Ilala,Kipawa,Borehole,-6.847167,39.210642,5,0,16,2.2,Low Risk,Intermediate Risk
+25,Ilala,Kipawa,Borehole,-6.857304,39.207041,5,0,16,2.2,Low Risk,Intermediate Risk
+26,Ilala,Kipawa,Borehole,-6.856169,39.206207,3,0,9.2,2.2,Low Risk,Low Risk
+27,Ilala,Kipawa,Borehole,-6.858414,39.207842,0,0,2.2,2.2,Low Risk,Low Risk
+28,Ilala,Kipawa,Borehole,-6.861109,39.199709,5,0,16,2.2,Low Risk,Intermediate Risk
+29,Ilala,Kipawa,Borehole,-6.863333,39.204582,0,0,2.2,2.2,Low Risk,Low Risk
+30,Ilala,Kipawa,Borehole,-6.861289,39.203732,5,0,16,2.2,Low Risk,Intermediate Risk
+31,Ilala,Mnyamani,Vendor,-6.857404,39.211004,0,0,2.2,2.2,Low Risk,Low Risk
+32,Ilala,Mnyamani,Borehole,-6.83814,39.242258,0,0,2.2,2.2,Low Risk,Low Risk
+33,Ilala,Mnyamani,Borehole,-6.842327,39.239651,0,0,2.2,2.2,Low Risk,Low Risk
+34,Ilala,Mnyamani,Borehole,-6.841128,39.236413,5,0,16,2.2,Low Risk,Intermediate Risk
+35,Ilala,Mnyamani,Borehole,-6.84278,39.238313,1,0,2.2,2.2,Low Risk,Low Risk
+36,Ilala,Mnyamani,Public Tap,-6.840616,39.237644,0,0,2.2,2.2,Low Risk,Low Risk
+37,Ilala,Mnyamani,Borehole,-6.835622,39.243233,5,1,16,2.2,Low Risk,Intermediate Risk
+38,Ilala,Mnyamani,Borehole,-6.837961,39.239145,0,0,2.2,2.2,Low Risk,Low Risk
+39,Ilala,Mnyamani,Borehole,-6.837836,39.238684,0,0,2.2,2.2,Low Risk,Low Risk
+40,Ilala,Mnyamani,Borehole,-6.837586,39.238759,0,0,2.2,2.2,Low Risk,Low Risk
+41,Ilala,Pugu,Open Well,-6.931758,39.127447,4,0,16,2.2,Low Risk,Intermediate Risk
+42,Ilala,Pugu,Open Well,-6.931758,39.127448,5,2,16,5.1,Low Risk,Intermediate Risk
+43,Ilala,Pugu,Open Well,-6.931753,39.127491,5,0,16,2.2,Low Risk,Intermediate Risk
+44,Ilala,Pugu,Open Well,-6.932352,39.12768,3,0,9.2,2.2,Low Risk,Low Risk
+45,Ilala,Pugu,Open Well,-6.932359,39.127666,3,0,9.2,2.2,Low Risk,Low Risk
+46,Ilala,Pugu,Open Well,-6.931304,39.125805,5,0,16,2.2,Low Risk,Intermediate Risk
+47,Ilala,Pugu,Open Well,-6.931306,39.125783,3,0,9.2,2.2,Low Risk,Low Risk
+48,Ilala,Pugu,Open Well,-6.931306,39.125784,0,0,2.2,2.2,Low Risk,Low Risk
+49,Ilala,Pugu,Open Well,-6.939243,39.109318,5,0,16,2.2,Low Risk,Intermediate Risk
+50,Ilala,Pugu,Open Well,-6.926529,39.114824,4,0,16,2.2,Low Risk,Intermediate Risk
+51,Ilala,Majohe,Open Well,-6.916026,39.135502,4,0,16,2.2,Low Risk,Intermediate Risk
+52,Ilala,Majohe,Open Well,-6.911352,39.140873,5,0,16,2.2,Low Risk,Intermediate Risk
+53,Ilala,Majohe,Open Well,-6.910342,39.141203,4,0,16,2.2,Low Risk,Intermediate Risk
+54,Ilala,Majohe,Open Well,-6.908974,39.141699,5,1,16,2.2,Low Risk,Intermediate Risk
+55,Ilala,Majohe,Open Well,-6.90926,39.141747,5,0,16,2.2,Low Risk,Intermediate Risk
+56,Ilala,Majohe,Open Well,-6.909414,39.141008,5,1,16,2.2,Low Risk,Intermediate Risk
+57,Ilala,Majohe,Open Well,-6.918466,39.145293,5,0,16,2.2,Low Risk,Intermediate Risk
+58,Ilala,Majohe,Open Well,-6.918216,39.146574,5,0,16,2.2,Low Risk,Intermediate Risk
+59,Ilala,Majohe,Open Well,-6.918216,39.146575,5,0,16,2.2,Low Risk,Intermediate Risk
+60,Ilala,Majohe,Open Well,-6.917963,39.148086,5,0,16,2.2,Low Risk,Intermediate Risk
+61,Ilala,Majohe,Open Well,-6.916803,39.142823,5,0,16,2.2,Low Risk,Intermediate Risk
+62,Ilala,Chanika,Borehole,-6.879193,39.163308,1,0,2.2,2.2,Low Risk,Low Risk
+63,Ilala,Chanika,Borehole,-6.985053,39.096137,0,0,2.2,2.2,Low Risk,Low Risk
+64,Ilala,Chanika,Public Tap,-6.98449,39.095981,0,0,2.2,2.2,Low Risk,Low Risk
+65,Ilala,Chanika,Closed Well,-6.983841,39.093002,1,0,2.2,2.2,Low Risk,Low Risk
+66,Ilala,Chanika,Borehole,-6.981163,39.089917,4,0,16,2.2,Low Risk,Intermediate Risk
+67,Ilala,Chanika,Borehole,-6.982353,39.090194,5,1,16,2.2,Low Risk,Intermediate Risk
+68,Ilala,Chanika,Vendor,-6.998193,39.087189,0,0,2.2,2.2,Low Risk,Low Risk
+69,Ilala,Chanika,Vendor,-6.998193,39.08759,0,0,2.2,2.2,Low Risk,Low Risk
+70,Ilala,Chanika,Borehole,-6.998193,39.089191,0,0,2.2,2.2,Low Risk,Low Risk
+71,Ilala,Msongola,Public Tap,-6.974322,39.178974,1,0,2.2,2.2,Low Risk,Low Risk
+72,Ilala,Msongola,Open Well,-6.974322,39.178985,4,0,16,2.2,Low Risk,Intermediate Risk
+73,Ilala,Msongola,Public Tap,-6.976216,39.180654,3,0,9.2,2.2,Low Risk,Low Risk
+74,Ilala,Msongola,Open Well,-6.976216,39.180655,5,0,16,2.2,Low Risk,Intermediate Risk
+75,Ilala,Msongola,Public Tap,-6.976216,39.119056,0,0,2.2,2.2,Low Risk,Low Risk
+76,Ilala,Msongola,Open Well,-6.97285,39.18595,5,4,16,16,Intermediate Risk,Intermediate Risk
+77,Ilala,Msongola,Open Well,-6.97285,39.181154,4,1,16,2.2,Low Risk,Intermediate Risk
+78,Ilala,Msongola,Open Well,-6.97285,39.181155,5,0,16,2.2,Low Risk,Intermediate Risk
+79,Ilala,Msongola,Open Well,-6.97285,39.178159,5,0,16,2.2,Low Risk,Intermediate Risk
+80,Ilala,Msongola,Public Tap,-6.974694,39.177736,0,0,2.2,2.2,Low Risk,Low Risk
+81,Ilala,Ocean  Road,Beach,-6.807768,39.273843,5,5,16,16,Intermediate Risk,Intermediate Risk
+82,Ilala,Ocean  Road,Beach,-6.807768,39.273844,5,5,16,16,Intermediate Risk,Intermediate Risk
+83,Ilala,Ocean  Road,Beach,-6.807768,39.273845,5,5,16,16,Intermediate Risk,Intermediate Risk
+91,Temeke,Buza,Borehole,-6.892982,39.223518,5,0,16,2.2,Low Risk,Intermediate Risk
+92,Temeke,Buza,Vendor,-6.890887,39.223423,0,0,2.2,2.2,Low Risk,Low Risk
+93,Temeke,Buza,Closed Well,-6.893069,39.22505,5,0,16,2.2,Low Risk,Intermediate Risk
+94,Temeke,Buza,Borehole,-6.896437,39.227023,0,0,2.2,2.2,Low Risk,Low Risk
+95,Temeke,Buza,Closed Well,-6.897129,39.22589,0,0,2.2,2.2,Low Risk,Low Risk
+96,Temeke,Yombo Kilakala,Borehole,-6.869671,39.245161,0,0,2.2,2.2,Low Risk,Low Risk
+97,Temeke,Yombo Kilakala,Borehole,-6.869671,39.245162,0,0,2.2,2.2,Low Risk,Low Risk
+98,Temeke,Yombo Kilakala,Borehole,-6.869172,39.243669,0,0,2.2,2.2,Low Risk,Low Risk
+99,Temeke,Yombo Kilakala,Borehole,-6.869172,39.243669,0,0,2.2,2.2,Low Risk,Low Risk
+100,Temeke,Yombo Kilakala,Borehole,-6.869089,39.243202,1,0,2.2,2.2,Low Risk,Low Risk
+101,Temeke,Yombo Vituka,Borehole,-6.871954,39.241591,3,0,9.2,2.2,Low Risk,Low Risk
+102,Temeke,Yombo Vituka,Open Well,-6.871955,39.22677,5,0,16,2.2,Low Risk,Intermediate Risk
+103,Temeke,Yombo Vituka,Open Well,-6.872151,39.226795,5,0,16,2.2,Low Risk,Intermediate Risk
+104,Temeke,Yombo Vituka,Public Tap,-6.872059,39.226753,0,0,2.2,2.2,Low Risk,Low Risk
+105,Temeke,Yombo Vituka,Public Tap,-6.871326,39.230568,2,0,5.1,2.2,Low Risk,Low Risk
+106,Temeke,Makangarawe,Borehole,-6.883017,39.243449,0,0,2.2,2.2,Low Risk,Low Risk
+107,Temeke,Makangarawe,Borehole,-6.88406,39.236301,5,0,16,2.2,Low Risk,Intermediate Risk
+108,Temeke,Makangarawe,Borehole,-6.884176,39.236428,0,0,2.2,2.2,Low Risk,Low Risk
+109,Temeke,Makangarawe,Borehole,-6.883392,39.236511,0,0,2.2,2.2,Low Risk,Low Risk
+110,Temeke,Makangarawe,Borehole,-6.883127,39.239113,5,2,16,5.1,Low Risk,Intermediate Risk
+111,Temeke,Miburuni,Borehole,-6.841036,39.280589,0,0,2.2,2.2,Low Risk,Low Risk
+112,Temeke,Miburuni,Open Well,-6.84114,39.280572,5,0,16,2.2,Low Risk,Intermediate Risk
+113,Temeke,Miburuni,Borehole,-6.840498,39.27945,4,0,16,2.2,Low Risk,Intermediate Risk
+114,Temeke,Miburuni,Borehole,-6.842162,39.279294,5,0,16,2.2,Low Risk,Intermediate Risk
+115,Temeke,Miburuni,Borehole,-6.84346,39.276342,0,0,2.2,2.2,Low Risk,Low Risk
+116,Temeke,Azimio,Vendor,-6.869572,39.265308,5,0,16,2.2,Low Risk,Intermediate Risk
+117,Temeke,Azimio,Borehole,-6.871455,39.2678,5,0,16,2.2,Low Risk,Intermediate Risk
+118,Temeke,Azimio,Borehole,-6.872471,39.265957,5,0,16,2.2,Low Risk,Intermediate Risk
+119,Temeke,Azimio,Borehole,-6.871307,39.26781,5,0,16,2.2,Low Risk,Intermediate Risk
+120,Temeke,Azimio,Borehole,-6.866581,39.27115,0,0,2.2,2.2,Low Risk,Low Risk
+121,Temeke,Mtoni,Borehole,-6.877576,39.27389,2,0,5.1,2.2,Low Risk,Low Risk
+122,Temeke,Mtoni,Borehole,-6.877735,39.27378,0,0,2.2,2.2,Low Risk,Low Risk
+123,Temeke,Mtoni,Borehole,-6.869868,39.274041,0,0,2.2,2.2,Low Risk,Low Risk
+124,Temeke,Mtoni,Borehole,-6.868206,39.28199,0,0,2.2,2.2,Low Risk,Low Risk
+125,Temeke,Mtoni,Borehole,-6.867887,39.283589,0,0,2.2,2.2,Low Risk,Low Risk
+126,Temeke,Keko,Borehole,-6.836758,39.270501,2,0,5.1,2.2,Low Risk,Low Risk
+127,Temeke,Keko,Borehole,-6.837152,39.272324,1,0,2.2,2.2,Low Risk,Low Risk
+128,Temeke,Keko,Borehole,-6.836382,39.273605,2,0,5.1,2.2,Low Risk,Low Risk
+129,Temeke,Keko,Borehole,-6.836758,39.270501,0,0,2.2,2.2,Low Risk,Low Risk
+130,Temeke,Keko,Borehole,-6.836417,39.274808,5,0,16,2.2,Low Risk,Intermediate Risk
+131,Temeke,Kibonde Maji,Borehole,-6.915287,39.276287,0,0,2.2,2.2,Low Risk,Low Risk
+132,Temeke,Kibonde Maji,Public Tap,-6.915916,39.276578,3,0,9.2,2.2,Low Risk,Low Risk
+133,Temeke,Kibonde Maji,Public Tap,-6.915676,39.276341,5,5,16,16,Intermediate Risk,Intermediate Risk
+134,Temeke,Kibonde Maji,Public Tap,-6.914884,39.279163,5,0,16,2.2,Low Risk,Intermediate Risk
+135,Temeke,Kibonde Maji,Public Tap,-6.915155,39.278447,0,0,2.2,2.2,Low Risk,Low Risk
+136,Kinondoni,Kigogo,Stream,-6.819077,39.254222,5,5,16,16,Intermediate Risk,Intermediate Risk
+137,Kinondoni,Kigogo,Stream,-6.819928,39.255245,5,5,16,16,Intermediate Risk,Intermediate Risk
+138,Kinondoni,Kigogo,Stream,-6.819492,39.253932,5,5,16,16,Intermediate Risk,Intermediate Risk
+139,Kinondoni,Kigogo,Stream,-6.81964,39.253635,5,5,16,16,Intermediate Risk,Intermediate Risk
+140,Kinondoni,Kigogo,Stream,-6.81964,39.253635,5,5,16,16,Intermediate Risk,Intermediate Risk
+141,Kinondoni,Kigogo,Open Well,-6.819791,39.253606,5,5,16,16,Intermediate Risk,Intermediate Risk
+142,Kinondoni,Kigogo,Open Well,-6.819502,39.256868,5,5,16,16,Intermediate Risk,Intermediate Risk
+143,Kinondoni,Kigogo,Open Well,-6.820767,39.252028,5,4,16,16,Intermediate Risk,Intermediate Risk
+144,Kinondoni,Kigogo,Open Well,-6.820767,39.25204,5,5,16,16,Intermediate Risk,Intermediate Risk
+149,Kinondoni,Ndugumbi,Borehole,-6.803399,39.250003,5,2,16,5.1,Low Risk,Intermediate Risk
+153,Kinondoni,Ndugumbi,Borehole,-6.800969,39.252832,5,0,16,2.2,Low Risk,Intermediate Risk
+154,Kinondoni,Ndugumbi,Borehole,-6.800969,39.252833,5,0,16,2.2,Low Risk,Intermediate Risk
+156,Kinondoni,Magomeni,Borehole,-6.803389,39.257391,5,0,16,2.2,Low Risk,Intermediate Risk
+157,Kinondoni,Magomeni,Borehole,-6.803389,39.257382,5,0,16,2.2,Low Risk,Intermediate Risk
+158,Kinondoni,Magomeni,Borehole,-6.800642,39.258041,0,0,2.2,2.2,Low Risk,Low Risk
+160,Kinondoni,Magomeni,Open Well,-6.799912,39.256384,5,0,16,2.2,Low Risk,Intermediate Risk
+161,Kinondoni,Magomeni,Open Well,-6.799912,39.257385,5,5,16,16,Intermediate Risk,Intermediate Risk
+162,Kinondoni,Magomeni,Open Well,-6.799912,39.255383,5,5,16,16,Intermediate Risk,Intermediate Risk
+163,Kinondoni,Magomeni,Open Well,-6.799863,39.256387,5,5,16,16,Intermediate Risk,Intermediate Risk
+164,Kinondoni,Magomeni,Open Well,-6.799867,39.256262,5,1,16,2.2,Low Risk,Intermediate Risk
+165,Kinondoni,Magomeni,Open Well,-6.780629,39.256289,5,5,16,16,Intermediate Risk,Intermediate Risk
+181,Kinondoni,Mwananyamala,Open Well,-6.780353,39.254029,5,5,16,16,Intermediate Risk,Intermediate Risk
+182,Kinondoni,Mwananyamala,Open Well,-6.796835,39.254343,5,5,16,16,Intermediate Risk,Intermediate Risk
+193,Kinondoni,Tandale,Open Well,-6.765001,39.244012,5,5,16,16,Intermediate Risk,Intermediate Risk
+209,Kinondoni,Msasani,Borehole,-6.810788,39.267888,5,3,16,9.2,Low Risk,Intermediate Risk
+84,Kinondoni,CocoBeach,Beach,-6.810788,39.297949,5,5,16,16,Intermediate Risk,Intermediate Risk
+85,Kinondoni,CocoBeach,Beach,-6.810788,39.297961,5,5,16,16,Intermediate Risk,Intermediate Risk
+86,Kinondoni,CocoBeach,Beach,-6.810788,39.297951,5,5,16,16,Intermediate Risk,Intermediate Risk
+87,Kinondoni,CocoBeach,Beach,-6.810788,39.297952,5,5,16,16,Intermediate Risk,Intermediate Risk
+88,Kinondoni,CocoBeach,Beach,-6.810788,39.297953,5,5,16,16,Intermediate Risk,Intermediate Risk
+89,Kinondoni,CocoBeach,Beach,-6.810788,39.297954,5,5,16,16,Intermediate Risk,Intermediate Risk
+90,Kinondoni,CocoBeach,Beach,-6.810788,39.297955,5,5,16,16,Intermediate Risk,Intermediate Risk
