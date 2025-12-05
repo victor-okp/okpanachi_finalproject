@@ -2,16 +2,20 @@
 
 title: "final_project.qmd" author: "Victor Okpanachi" format: html editor: visual ---
 
+#REVIEW CJT: I would remove the quarto and running code and instead add a title. Also I left a comment on subtitles and text from the quarto to use as advantage
+
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ## Running Code
 
+#REVIEW CJT: I would put this code in a "code" folder. It makes it more organized to find it via GitHub.
+
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
-# This data is a microbial water quality data collected in Dar es Salaam, Tanzania. It was collected last summer and the aim was to assess the level of microbial water quality from different water sources in three districts of Dar es Salaam by tessting for the presence of coliforms and E.coli which serves as an indicator for fecal contamination in water sources. 
+# This data is a microbial water quality data collected in Dar es Salaam, Tanzania. It was collected last summer and the aim was to assess the level of microbial water quality from different water sources in three districts of Dar es Salaam by tessting (#REVIEW CJT: testing) for the presence of coliforms and E.coli which serves as an indicator for fecal contamination in water sources. 
 ```
 
 You can add options to executable code like this
@@ -22,6 +26,8 @@ You can add options to executable code like this
 library(tidyverse)
 library(dplyr)
 library(readr)
+
+#REVIEW CJT: dplyr and readr is already in the tidyverse, there is no reason to load this code again
 
 water_raw <- read_csv("data_raw/water_tz_full.csv")
 View(water_raw)
@@ -44,7 +50,7 @@ water_clean <- water_raw |>
 glimpse(water_clean)
 
 
-
+#REVIEW CJT: maybe showing the exact data column would be nice to use to display any changes
 ```
 
 ```{r}
@@ -60,6 +66,7 @@ summary_microbes <- water_clean |>
 
 summary_microbes
 
+#REVIEW CJT: It would be nice to type your tables again so we can see them in the code instead of opening it up directly in the environment
 ```
 
 ```{r}
@@ -121,23 +128,26 @@ ggplot(water_clean, aes(x = districts, y = e_coli_mpn_100mL)) +
     x = "District",
     y = "E. coli MPN/100 mL (log scale)"
   )
-
+#Review CJT: Include a short line of what code you are using
 ggsave(
   "outputs/ecoli_by_district.png",
   width = 8, height = 5, dpi = 300
 )
+#REVIEW CJT: Graphs look good but maybe include a bit more description out of the R File to describe the single dots
 
 ```
 
 ```{r}
 # This geospatial visualization is a concept from Week 9 (geospatial data), Week 5 (data visualization), and Week 3 (tidyverse basics). I created the spatial plots using longitude and latitude to map contamination intensity and apply faceting to compare E. coli and coliform levels across districts. 
 
+#REVIEW CJT: Confused with the reference to Week 9 Spatial Data. We used spatial data to use the terra package to be able to plot maps. This looks to just be a graph with the latitudes and longitudes
+
 water_clean <- water_clean |>
   mutate(
     log_ecoli = log10(e_coli_mpn_100mL + 1),
     log_coliform = log10(coliform_mpn_100mL + 1)
   )
-
+#Review CJT: Include a short line of what code you are using
 
 p_ecoli_facet <- ggplot(water_clean,
                         aes(x = longitude, y = latitude, color = log_ecoli)) +
@@ -152,8 +162,11 @@ p_ecoli_facet <- ggplot(water_clean,
     color = "log10(E. coli)"
   ) +
   theme_minimal()
+#REVIEW CJT: I don't think you need to seperate longitude by 0.05, seems like a lot of text on the x-axis
 
 p_ecoli_facet
+
+#Review CJT: Include a short line of what code you are using
 
 ggsave(
   "outputs/ecoli_geospatial_facet_districts.png",
@@ -161,7 +174,7 @@ ggsave(
   width = 8, height = 5, dpi = 300
 )
 
-
+#Review CJT: Include a short line of what code you are using
 
 p_coliform_facet <- ggplot(water_clean,
                            aes(x = longitude, y = latitude, color = log_coliform)) +
@@ -176,8 +189,10 @@ p_coliform_facet <- ggplot(water_clean,
     color = "log10(Coliform MPN/100 mL)"
   ) +
   theme_minimal()
-
+#REVIEW CJT: code color at high of log10() is too bright. Maybe use a darker color scheme
 p_coliform_facet
+
+#Review CJT: Include a short line of what code you are using
 
 ggsave(
   "outputs/coliform_geospatial_facet_districts.png",
@@ -191,6 +206,10 @@ ggsave(
 ```{r}
 # Here, I created a function using skills from Week 11 (functions), Week 3 (tidyverse basics), and Week 5 (data visualization). I write reusable functions to classify E. coli and coliform contamination according to WHO guidelines and apply them across the dataset using tidyverse mutation. I then summarize microbial risk levels by district and visualize the results using proportion bar charts.
 
+#Review CJT: I would use comments per line rather than as one paragraph to allow for the reader to know what units are going on without scrolling up
+
+#Review CJT: I would take advantage of the QMD file by creating titles and subtitles and writing your descriptions as text between the R columns. Using # are best when writing slight descriptions of the code. If you have any questions in how I did it in my QMD file, feel free to email me cjtescher@arizona.edu
+
 classify_ecoli_risk <- function(ecoli_value) {
   if (ecoli_value == 0) {
     "Safe"
@@ -202,6 +221,8 @@ classify_ecoli_risk <- function(ecoli_value) {
     "High Risk"
   }
 }
+
+#Review CJT: Add comment
 
 classify_coliform_risk <- function(coliform_value) {
   if (coliform_value == 0) {
@@ -227,6 +248,7 @@ water_clean <- water_raw |>
 risk_by_district <- water_clean |>
   group_by(districts, ecoli_risk_level) |>
   summarise(n = n(), .groups = "drop") |>
+  #Review CJT: you probably don't need to add the tidyr function
   tidyr::pivot_wider(
     names_from = ecoli_risk_level,
     values_from = n,
@@ -321,13 +343,13 @@ who_risk_info <- tribble(
   "High Risk",          "High microbiological risk",  "Urgent: treat water or use alternative source"
 )
 
-
+#Review CJT: Include a short line of what code you are using
 ecoli_by_district <- water_clean |>
   count(districts, ecoli_risk_level, name = "n") |>
   group_by(districts) |>
   mutate(pct = n / sum(n)) |>
   ungroup()
-
+#Review CJT: Include a short line of what code you are using
 ecoli_risk_with_who <- ecoli_by_district |>
   rename(risk_level = ecoli_risk_level) |>
   left_join(who_risk_info, by = "risk_level")
@@ -336,13 +358,13 @@ ecoli_risk_with_who
 
 
 
-
+#Review CJT: Include a short line of what code you are using
 coliform_by_district <- water_clean |>
   count(districts, coliform_risk_level, name = "n") |>
   group_by(districts) |>
   mutate(pct = n / sum(n)) |>
   ungroup()
-
+#Review CJT: Include a short line of what code you are using
 coliform_risk_with_who <- coliform_by_district |>
   rename(risk_level = coliform_risk_level) |>
   left_join(who_risk_info, by = "risk_level")
